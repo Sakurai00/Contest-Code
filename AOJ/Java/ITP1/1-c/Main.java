@@ -6,5 +6,6 @@ public class Main {
         int a = sc.nextInt();
         int b = sc.nextInt();
         System.out.printf("%d %d\n", a * b, (a + b) * 2);
+        sc.close();
     }
 }
