@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "CodeLens (Launch) - Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "Contest_12cfa44f"
+        },
+        {
             "name": "gdb debug",
             "type": "cppdbg",
             "request": "launch",
@@ -24,6 +31,6 @@
                 }
             ],
             "preLaunchTask": "g++ build"
-        },
+        }
     ]
 }

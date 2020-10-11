@@ -21,7 +21,7 @@ int sub () {
     vector<int> A(N,0); //可変長の配列 配列数N,0で初期化
     vector<vector<int>> B(n, vector<int>(m));
     A.at(i) ;           //配列xの要素i A[i]
-    A.pop_back;         //配列xの最後を取り除く
+    //A.pop_back;         //配列xの最後を取り除く
     A.push_back(1),     //配列xの最後に1を追加
 
     s.erase(unique(s.begin(), s.end()), s.end()); // 重複文字削除
