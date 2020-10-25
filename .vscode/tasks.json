@@ -10,15 +10,38 @@
                 "-O0",
                 "${file}",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${fileDirname}\\${fileBasenameNoExtension}.out"
             ],
             "options": {
-                "cwd": "C:\\Code\\msys64\\mingw64\\bin",
+                "cwd": "C:\\Code\\msys64\\mingw64\\bin"
             },
             "group": {
                 "kind": "build",
                 "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "Test",
+            "command": "cd ${fileDirname} && oj t -c \"${fileDirname}\\${fileBasenameNoExtension}.out\"",
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared"
             },
+            "dependsOn": "g++ build",
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "Sub",
+            "command": "cd ${fileDirname} && acc s ${fileBasename}",
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared"
+            },
+            "problemMatcher": []
         }
     ],
     "version": "2.0.0"
