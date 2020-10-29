@@ -16,22 +16,25 @@ const long long llINF = 1e18;
 #pragma endregion
 
 int main () {
-    cout << fixed << setprecision(15);
-    int n;
-    cin >> n;
-    vint x(n);
-    double m = 0, u = 0, c = 0;
+    int n; cin >> n;
+    int check = 0;
+    bool ans = false;
+    vvint d(n, vint(2));
     rep(i, n) {
-        cin >> x[i];
-        x[i] = abs(x[i]);
-        m += x[i];
-        u += pow(x[i], 2);
-        if (c < x[i]) c = x[i];
+        rep(j, 2) {
+            cin >> d[i][j];
+        }
+        if (d[i][0] == d[i][1]) {
+            check += 1;
+        } else {
+            check = 0;
+        }
+        if (check == 3) {
+            ans = true;
+        }
     }
-    u = sqrt(u);
 
-    cout << m << endl;
-    cout << u << endl;
-    cout << c << endl;
+    if (ans) cout << "Yes" << endl;
+    else cout << "No" << endl;
     return 0;
 }
