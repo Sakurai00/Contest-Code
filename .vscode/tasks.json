@@ -2,7 +2,7 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "g++ build",
+            "label": "Win g++ build",
             "command": "C:\\Code\\msys64\\mingw64\\bin\\g++.exe",
             "args": [
                 "-std=c++17",
@@ -15,6 +15,42 @@
             "options": {
                 "cwd": "C:\\Code\\msys64\\mingw64\\bin"
             },
+        },
+        {
+            "type": "shell",
+            "label": "Win Test",
+            "command": "cd ${fileDirname} && oj t -c \"${fileDirname}\\${fileBasenameNoExtension}.out\"",
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared"
+            },
+            "dependsOn": "Win g++ build",
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "Win Sub",
+            "command": "cd ${fileDirname} && acc s ${fileBasename}",
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "WSL g++ build",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-std=c++17",
+                "-g",
+                "-O0",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.out"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -22,20 +58,20 @@
         },
         {
             "type": "shell",
-            "label": "Test",
-            "command": "cd ${fileDirname} && oj t -c \"${fileDirname}\\${fileBasenameNoExtension}.out\"",
+            "label": "WSL Test",
+            "command": "cd ${fileDirname} && oj t -c ./${fileBasenameNoExtension}.out",
             "presentation": {
                 "reveal": "always",
                 "focus": true,
                 "panel": "shared"
             },
-            "dependsOn": "g++ build",
+            "dependsOn": "WSL g++ build",
             "problemMatcher": []
         },
         {
             "type": "shell",
-            "label": "Sub",
-            "command": "cd ${fileDirname} && acc s ${fileBasename}",
+            "label": "WSL Sub",
+            "command": "cd ${fileDirname} && acc submit ${fileBasename}",
             "presentation": {
                 "reveal": "always",
                 "focus": true,
