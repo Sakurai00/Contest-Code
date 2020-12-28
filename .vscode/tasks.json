@@ -1,6 +1,6 @@
 {
     "tasks": [
-        {
+        /*{
             "type": "shell",
             "label": "Win g++ build",
             "command": "C:\\Code\\msys64\\mingw64\\bin\\g++.exe",
@@ -38,7 +38,7 @@
                 "panel": "shared"
             },
             "problemMatcher": []
-        },
+        },*/
         {
             "type": "shell",
             "label": "WSL g++ build",
