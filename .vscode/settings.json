@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "iostream": "cpp",
-        "ostream": "cpp"
-    },
-    "code-runner.executorMap": {
-        "cpp": "cd $dir && g++ $fileName -std=c++17 -o $fileNameWithoutExt.out && ./$fileNameWithoutExt.out"
-    },
-}
