@@ -33,3 +33,5 @@ cppRef.cpp
 *.exe
 *.out
 *.app
+
+Rust/target
